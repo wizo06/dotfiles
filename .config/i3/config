@@ -132,6 +132,12 @@ assign [class="Spotify"]        $ws3
 assign [class="Gnome-terminal"] $ws4
 assign [class="Code"]           $ws5
 
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output DP-4
+workspace $ws5 output DP-2
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -211,6 +217,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Fix touchpad
 exec ~/.config/i3/fix_touchpad.sh
+
+# xrandr
+exec ~/.screenlayout/xrandr.sh
 
 # Startup
 exec google-chrome
