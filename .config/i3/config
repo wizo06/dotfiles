@@ -112,10 +112,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 "
-# discord
-set $ws2 "2 "
-# slack
-# set $ws2 "2 "
+set $ws2 "2  "
 set $ws3 "3 "
 set $ws4 "4 "
 set $ws5 "5 "
@@ -212,32 +209,33 @@ bindsym XF86AudioPrev exec playerctl previous
 # Fix touchpad
 exec ~/.config/i3/fix_touchpad.sh
 
-# xrandr
-exec ~/.screenlayout/xrandr.sh
-
 # Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-# Startup
-exec google-chrome --password-store=gnome
-exec discord
-exec slack
-# exec spotify
-exec i3-sensible-terminal
-exec code
-
 # Work setup
+exec ~/.screenlayout/xrandr_work.sh
 workspace $ws1 output eDP-1
 workspace $ws2 output eDP-1
 workspace $ws3 output eDP-1
 workspace $ws4 output DP-4
 workspace $ws5 output DP-2
+exec google-chrome --password-store=gnome
+exec slack
+exec spotify
+exec i3-sensible-terminal
+exec code
 
 # Home setup
+exec ~/.screenlayout/xrandr_home.sh
 workspace $ws1 output DP-4-2
 workspace $ws2 output DP-4-2
 workspace $ws3 output DP-4-2
 workspace $ws4 output DP-4-2
 workspace $ws5 output DP-4-2
+exec google-chrome --password-store=gnome
+exec slack
+exec spotify
+exec i3-sensible-terminal
+exec code
