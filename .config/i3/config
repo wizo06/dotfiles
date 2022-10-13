@@ -216,11 +216,11 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # Work setup
 exec ~/.screenlayout/xrandr_work.sh
-workspace $ws1 output DP-2
-workspace $ws2 output DP-2
-workspace $ws3 output DP-2
-workspace $ws4 output DP-2
-workspace $ws5 output DP-2
+workspace $ws1 output DP-3
+workspace $ws2 output DP-3
+workspace $ws3 output DP-3
+workspace $ws4 output DP-3
+workspace $ws5 output DP-3
 exec google-chrome --password-store=gnome
 exec slack
 exec spotify
